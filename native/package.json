@@ -1,0 +1,16 @@
+{
+  "name": "@macbease-multiverse/native",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "type":"module",
+  "files":[
+    "src/**/*"
+  ],
+  "scripts": {
+    "pub":"npm version patch && npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
