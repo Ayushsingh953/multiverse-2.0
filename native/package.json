@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
-  "type":"module",
-  "files":[
+  "type": "module",
+  "files": [
     "src/**/*"
   ],
   "scripts": {
-    "pub":"npm version patch && npm publish"
+    "pub": "npm version patch && npm publish"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.8.1"
+  }
 }
