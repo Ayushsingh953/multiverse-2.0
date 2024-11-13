@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oxford-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oxford
+  template:
+    metadata:
+      labels:
+        app: oxford
+    spec:
+      containers:
+        - name: oxford
+          image: ayush212/oxford
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oxford-srv
+spec:
+  selector:
+    app: oxford
+  ports:
+    - name: oxford
+      protocol: TCP
+      port: 5050
+      targetPort: 5050

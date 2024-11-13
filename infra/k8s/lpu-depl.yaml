@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lpu-depl
+spec:
+  replicas: 1
+  selectors:
+    matchLabels:
+      app: lpu
+  template:
+    metadata:
+      labels:
+        app: lpu
+    spec:
+      containers:
+        - name: lpu
+          image: ayush212/lpu
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lpu-srv
+spec:
+  selector:
+    app: lpu
+  ports:
+    - name: lpu
+      protocol: TCP
+      port: 5050
+      targetPort: 5050

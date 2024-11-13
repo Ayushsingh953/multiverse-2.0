@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiverse-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multiverse
+  template:
+    metadata:
+      labels:
+        app: multiverse
+    spec:
+      containers:
+        - name: multiverse
+          image: ayush212/multiverse
+          
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: multiverse-srv
+spec:
+  selector:
+    app: multiverse
+  ports:
+    - name: multiverse
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
